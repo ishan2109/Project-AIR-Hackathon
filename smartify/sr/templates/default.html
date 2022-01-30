@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AIR QURE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+      <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-core.min.js"></script>
+      <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-pie.min.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+      <!-- Style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--Only for demo purpose - no need to add.-->
+
+<script type="text/javascript">
+
+window.onload = function () {
+	var chart = new CanvasJS.Chart("chartContainer", {
+	backgroundColor: "#242124",
+	axisY:{
+        title: "AQI",
+        labelFontColor: "white"
+      },
+      axisX:{
+        title: "Different hours of the day",
+        labelFontColor: "white"
+      },
+		title:{
+			text: ""
+		},
+		data: [
+		{
+			// Change type to "doughnut", "line", "splineArea", etc.
+			type: "splineArea",
+			dataPoints: [
+				{ label: "0",  y: 3  },
+				{ label: "2", y: 8  },
+				{ label: "4", y: 9  },
+				{ label: "6",  y: 11  },
+				{ label: "8",  y: 15  },
+				{ label: "10",  y: 18  },
+				{ label: "14",  y: 24  },
+				{ label: "18",  y: 27  },
+				{ label: "20",  y: 22  },
+				{ label: "22",  y: 16 },
+				{ label: "24",  y: 13  }
+
+
+			]
+		}
+		]
+	});
+	chart.render();
+}
+anychart.onDocumentReady(function() {
+
+
+  // set the data
+  var data = [
+      {x: "PM 10", value: 10},
+      {x: "PM 2.5", value:29},
+      {x: "CO2", value: 13},
+      {x: "N02", value: 22},
+      {x: "others", value: 26}
+
+  ];
+
+  // create the chart
+  var chart = anychart.pie();
+
+  // set the chart title
+  chart.title("Power consumed by each device");
+  chart.background().fill("#242124");
+  // add the data
+  chart.data(data);
+
+  // display the chart in the container
+  chart.container('container');
+  chart.draw();
+
+});
+</script>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+.innerbox {
+  position: absolute;
+  width: 600px;
+  height: 160px;
+  padding: 10px;
+  left: 5px;
+  background-color: #28282B;
+  font-size: 23px;
+  border-radius: 29px;
+
+}
+
+.innerbox-forcast {
+  position: absolute;
+  width: 600px;
+  height: 160px;
+  padding: 10px;
+  left: 35px;
+  top: 50px
+  margin: 15px;
+  background-color: #242124;
+  font-size: 23px;
+  border-radius: 29px;
+
+}
+.svg-item {
+    width: 100%;
+    font-size: 16px;
+    margin: 0 auto;
+    animation: donutfade 1s;
+}
+.donut-ring {
+    stroke: #EBEBEB;
+}
+.donut-segment {
+    transform-origin: center;
+    stroke: #FF6200;
+}
+.donut-segment-2 {
+    stroke: aqua;
+    animation: donut1 3s;
+}
+
+.donut-segment-3 {
+    stroke: #d9e021;
+    animation: donut2 3s;
+}
+
+
+.donut-segment-4 {
+    stroke: #ed1e79;
+    animation: donut3 3s;
+}
+
+.donut-segment-5 {
+    stroke: #40ff00;;
+    animation: donut4 3s;
+}
+.donut-segment-6 {
+    stroke: #ff0040;
+    animation: donut5 3s;
+}
+.segment-1{fill:#ccc;}
+.segment-2{fill:aqua;}
+.segment-3{fill:#d9e021;}
+.segment-4{fill:#ed1e79;}
+
+@keyframes donutfade {
+  /* this applies to the whole svg item wrapper */
+    0% {
+        opacity: .2;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes donutfadelong {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes donut1 {
+    0% {
+        stroke-dasharray: 0, 100;
+    }
+    100% {
+        stroke-dasharray: 69, 31;
+    }
+}
+
+@keyframes donut2 {
+    0% {
+        stroke-dasharray: 0, 100;
+    }
+    100% {
+        stroke-dasharray: 30, 70;
+    }
+}
+
+@keyframes donut3{
+    0% {
+        stroke-dasharray: 0, 100;
+    }
+    100% {
+        stroke-dasharray: 15, 85;
+    }
+}
+@keyframes donut4{
+    0% {
+        stroke-dasharray: 0, 100;
+    }
+    100% {
+        stroke-dasharray: 22, 78;
+    }
+}
+@keyframes donut5{
+    0% {
+        stroke-dasharray: 0, 100;
+    }
+    100% {
+        stroke-dasharray: 55, 45;
+    }
+}
+.donut-percent {
+    animation: donutfadelong 1s;
+}
+.donut-data {
+    font-size: 0.22em;
+    line-height: 1;
+    transform: translateY(0.5em);
+    text-align: center;
+    text-anchor: middle;
+    color:#666;
+    fill: #666;
+    animation: donutfadelong 1s;
+}
+.donut-text {
+    font-family: Arial, Helvetica, sans-serif;
+    fill: #FF6200;
+}
+.donut-text-1 {
+    fill: aqua;
+}
+.donut-text-2 {
+    fill: #d9e021;
+}
+.donut-text-3 {
+    fill: #ed1e79;
+}
+.donut-text-4 {
+    fill: #40ff00;
+}
+.donut-text-5 {
+    fill: #ff0040;
+}
+
+.donut-label {
+    font-size: 0.28em;
+    font-weight: 700;
+    line-height: 1;
+    fill: #000;
+    transform: translateY(0.25em);
+}
+
+.donut-percent {
+    font-size: 0.5em;
+    line-height: 1;
+    transform: translateY(0.5em);
+    font-weight: bold;
+}
+object1 {
+    width: 500px;
+            height: 500px;
+            position:absolute;
+            left:50px;
+            top:940px;
+            /* String value */
+        }
+scrollbox {
+  width: 320px;
+  height: 100px;
+  padding: 10px;
+  border: 10px solid gray;
+  margin: 10;
+  align:right;
+}
+hr {
+    display: block;
+    height: 100px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+.geek1 {
+        font-size:1px;
+        font-weight:bold;
+        color:white;
+        padding-bottom:10px;
+    }
+</style>
+
+  </head>
+<script>
+
+</script>
+  <body style="background-color: #28282B;">
+  <div>
+<div class="innerbox">
+<div style="color: #00FFFF; font-size: 12pt;"><img src="https://image.freepik.com/free-vector/abstract-blue-wavy-line-light_48799-1357.jpg"
+     width="65" height="50" align = "left" alt="power"/><h1 style="font-size: 35pt;font-family:red serif;color:#FF4000;"> &nbsp; AIR QURE</h1>
+
+</div>
+  <hr width="1100px;"/>
+<div id="container" style="width: 350px; height: 350px;position:absolute; left:680px;top:380px"></div>
+
+</div>
+<p><div id="chartContainer" style="height: 360px; width: 600px;position: absolute; left:20px;top:400px"></div>
+
+<div style="position: absolute; left: 61%; margin-left: 225px; width: 350px; height: 700px;  ">
+  <marquee width="99%" direction="up" height="100%" >
+        <div style="font-size: 27pt;font-family:blue serif;color:#00FFFF;"> Alerts and Suggestions</div>
+        <div style="font-size: 15pt;font-family: arial;color:#BDC3C7 ;">The amount of pollutants in air is noticeable but still there is no danger to health
+          <p>
+          If possible try to avoid travelling to secunderabad route today
+        </p>
+            <p>
+          Do not forget to carry your PM 2.5, N99 mask :)
+        </p>
+          <p>
+            If you are feeling any respiratory discomforts like coughing or breathing difficulties consider reducing outdoor activities for the nest 2 days.
+          </p>
+          <p>
+            The temperature recorded today is the highest in last seven days.
+          </p>
+        </div>
+    </marquee>
+
+</div>
+
+
+    <div style="font-size: 12pt; margin:11px;color:#80C0FF;position: absolute;left: 37%; top: 55px;">Route:</div> <div  class="dropdown" style="position: absolute; left: 42%; top:67px;"><form action="/action_page.php">
+  <label for="Room"></label>
+  <select name="Room" id="rooms">
+    <option value="volvo">Banajara Hills-Waverock</option>
+    <option value="saab">Hitech city - Secunderabad</option>
+    <option value="opel">Dilsukhnagar - Vidyanagar</option>
+    <option value="audi">Gachibowli - Miyapur</option>
+  </select>
+  <br><br>
+</form>
+</div>
+ <div style="font-size: 12pt; margin:11px;color:#80C0FF;position: absolute;left: 57.5%; top: 55px;">Forcast Duration:</div> <div  class="dropdown" style="position: absolute; left: 68%; top:67px;"><form action="/action_page.php">
+  <label for="Room"></label>
+  <select name="Room" id="rooms">
+    <option value="volvo">Next 2hrs</option>
+    <option value="saab">Next 4hrs</option>
+    <option value="opel">Next 8hrs</option>
+    <option value="audi">Next day</option>
+  </select>
+  <br><br>
+</form>
+</div>
+
+<div style="position:absolute; left:10px;top:140px;">
+    <div class="svg-item">
+  <svg width="75%" height="75%" viewBox="0 0 40 40" class="donut">
+    <circle class="donut-hole" cx="20" cy="20" r="15.91549430918954" fill="#fff"></circle>
+    <circle class="donut-ring" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5"></circle>
+    <circle class="donut-segment donut-segment-2" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5" stroke-dasharray="69 31" stroke-dashoffset="25"></circle>
+    <g class="donut-text donut-text-1">
+
+      <text y="50%" transform="translate(0, 2)">
+        <tspan x="50%" text-anchor="middle" class="donut-percent">69%</tspan>
+      </text>
+      <text y="60%" transform="translate(0, 2)">
+        <tspan x="50%" text-anchor="middle" class="donut-data">PM 2.5</tspan>
+      </text>
+    </g>
+  </svg>
+</div>
+          </div>
+    <div style="position:absolute; left:230px;top:140px;">
+<div class="svg-item">
+  <svg width="75%" height="75%" viewBox="0 0 40 40" class="donut">
+    <circle class="donut-hole" cx="20" cy="20" r="15.91549430918954" fill="#fff"></circle>
+    <circle class="donut-ring" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5"></circle>
+    <circle class="donut-segment donut-segment-3" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5" stroke-dasharray="30 70" stroke-dashoffset="25"></circle>
+    <g class="donut-text donut-text-2">
+
+      <text y="50%" transform="translate(0, 2)">
+        <tspan x="50%" text-anchor="middle" class="donut-percent">30%</tspan>
+      </text>
+      <text y="60%" transform="translate(0, 2)">
+        <tspan x="50%" text-anchor="middle" class="donut-data">PM10</tspan>
+      </text>
+    </g>
+  </svg>
+</div>
+</div>
+      <div style="position:absolute; left:450px;top:140px;">
+<div class="svg-item">
+  <svg width="75%" height="75%" viewBox="0 0 40 40" class="donut">
+    <circle class="donut-hole" cx="20" cy="20" r="15.91549430918954" fill="#fff"></circle>
+    <circle class="donut-ring" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5"></circle>
+    <circle class="donut-segment donut-segment-4" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5" stroke-dasharray="15 85" stroke-dashoffset="25"></circle>
+    <g class="donut-text donut-text-3">
+
+      <text y="50%" transform="translate(0, 2)">
+        <tspan x="50%" text-anchor="middle" class="donut-percent">15%</tspan>
+      </text>
+      <text y="60%" transform="translate(0, 2)">
+        <tspan x="50%" text-anchor="middle" class="donut-data">AQI</tspan>
+      </text>
+    </g>
+  </svg>
+</div>
+    </div>
+  <div style="position:absolute; left:670px;top:140px;">
+
+<div class="svg-item">
+
+  <svg width="75%" height="75%" viewBox="0 0 40 40" class="donut">
+    <circle class="donut-hole" cx="20" cy="20" r="15.91549430918954" fill="#fff"></circle>
+    <circle class="donut-ring" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5"></circle>
+    <circle class="donut-segment donut-segment-5" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5" stroke-dasharray="22 78" stroke-dashoffset="25"></circle>
+    <g class="donut-text donut-text-4">
+
+      <text y="50%" transform="translate(0, 2)">
+        <tspan x="50%" text-anchor="middle" class="donut-percent">22%</tspan>
+      </text>
+      <text y="60%" transform="translate(0, 2)">
+        <tspan x="50%" text-anchor="middle" class="donut-data">No2</tspan>
+      </text>
+    </g>
+  </svg>
+</div>
+    </div>
+ <div style="position:absolute; left:890px;top:140px;">
+
+<div class="svg-item">
+  <svg width="75%" height="75%" viewBox="0 0 40 40" class="donut">
+    <circle class="donut-hole" cx="20" cy="20" r="15.91549430918954" fill="#fff"></circle>
+    <circle class="donut-ring" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5"></circle>
+    <circle class="donut-segment donut-segment-6" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5" stroke-dasharray="55 45" stroke-dashoffset="25"></circle>
+    <g class="donut-text donut-text-5">
+
+      <text y="50%" transform="translate(0, 2)">
+        <tspan x="50%" text-anchor="middle" class="donut-percent">55%</tspan>
+      </text>
+      <text y="60%" transform="translate(0, 2)">
+        <tspan x="50%" text-anchor="middle" class="donut-data">CO2</tspan>
+      </text>
+    </g>
+  </svg>
+</div>
+
+      </div>
+  </div>
+  </body>
+</html>
